@@ -696,16 +696,18 @@ export default function App() {
                   >
                     Text us for a fast response
                   </a>
-                  <div
-                    style={{
-                      background: "rgba(0,0,0,0.3)",
-                      padding: "16px",
-                      borderRadius: "16px",
-                      color: "rgba(255,255,255,0.8)",
-                    }}
-                  >
-                    Service Area: Toronto & GTA
-                  </div>
+                 <div
+  style={{
+    background: "rgba(0,0,0,0.3)",
+    padding: "16px",
+    borderRadius: "16px",
+    color: "white",
+    fontWeight: 700,
+    fontSize: "18px",
+  }}
+>
+  Service Area: Ontario
+</div>
                 </div>
               </div>
             </div>
@@ -725,9 +727,9 @@ export default function App() {
                 <option>Basement demolition</option>
                 <option>Deck removal</option>
                 <option>Floor demolition</option>
-                <option>Flooring removal</option>
                 <option>Drywall / wall removal</option>
                 <option>Junk removal</option>
+                <option>Other</option>
               </select>
               <textarea
                 rows="5"
