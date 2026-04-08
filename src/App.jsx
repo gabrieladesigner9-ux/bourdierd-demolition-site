@@ -5,6 +5,8 @@ export default function App() {
     "Kitchen demolition",
     "Bathroom demolition",
     "Basement gut-outs",
+    "Deck removal",
+    "Floor demolition",
     "Flooring removal",
     "Drywall and wall removal",
     "Junk and debris removal",
@@ -28,7 +30,7 @@ export default function App() {
   const faqs = [
     {
       q: "What type of work do you do?",
-      a: "We specialize in residential interior demolition and junk removal for kitchens, bathrooms, basements, flooring, drywall, and renovation prep.",
+      a: "We specialize in residential interior demolition and junk removal for kitchens, bathrooms, basements, flooring, drywall, decks, and renovation prep.",
     },
     {
       q: "Do you offer free quotes?",
@@ -45,6 +47,33 @@ export default function App() {
     "Fast response time",
     "Clean and professional work",
     "Residential specialists",
+  ];
+
+  const demolitionProcess = [
+    {
+      number: "01",
+      icon: "💬",
+      title: "Consultation & Site Assessment",
+      text: "Every project starts with a clear review of the space. We assess the layout, materials, and scope of work so you know exactly what to expect before demolition begins.",
+    },
+    {
+      number: "02",
+      icon: "🛡️",
+      title: "Protection & Preparation",
+      text: "Before we begin, we protect surrounding areas and prepare the workspace for a clean, controlled demolition. Our goal is to minimize dust, disruption, and unnecessary mess.",
+    },
+    {
+      number: "03",
+      icon: "🧱",
+      title: "Interior Demolition",
+      text: "We complete the demolition carefully and efficiently, removing the materials that need to go while keeping the work area organized and safe throughout the project.",
+    },
+    {
+      number: "04",
+      icon: "🧹",
+      title: "Debris Removal & Final Clean-Up",
+      text: "Once demolition is complete, we remove debris and leave the space clean and ready for the next phase of your renovation.",
+    },
   ];
 
   const styles = {
@@ -77,20 +106,23 @@ export default function App() {
       flexWrap: "wrap",
     },
     logo: {
-      height: "84px",
+      height: "180px",
       width: "auto",
       objectFit: "contain",
     },
     nav: {
       display: "flex",
-      gap: "20px",
+      gap: "32px",
       flexWrap: "wrap",
       alignItems: "center",
     },
     navLink: {
-      color: "rgba(255,255,255,0.8)",
+      color: "rgba(255,255,255,0.9)",
       textDecoration: "none",
-      fontSize: "14px",
+      fontSize: "18px",
+      fontWeight: 700,
+      letterSpacing: "0.5px",
+      transition: "0.2s",
     },
     callBtn: {
       background: "#f4c542",
@@ -113,7 +145,7 @@ export default function App() {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "36px",
-      alignItems: "center",
+      alignItems: "start",
     },
     badge: {
       display: "inline-block",
@@ -123,13 +155,7 @@ export default function App() {
       background: "rgba(244,197,66,0.08)",
       borderRadius: "999px",
       padding: "8px 14px",
-      marginBottom: "18px",
-    },
-    heroLogo: {
-      height: "150px",
-      width: "auto",
-      objectFit: "contain",
-      marginBottom: "20px",
+      marginBottom: "16px",
     },
     h1: {
       fontSize: "clamp(2.2rem, 5vw, 4.2rem)",
@@ -307,6 +333,106 @@ export default function App() {
       color: "rgba(255,255,255,0.85)",
       fontSize: "15px",
     },
+
+    processSectionDark: {
+      padding: "95px 0",
+      background:
+        "radial-gradient(circle at top left, rgba(244,197,66,0.08), transparent 25%), #0b0b0b",
+      borderTop: "1px solid rgba(255,255,255,0.06)",
+      borderBottom: "1px solid rgba(255,255,255,0.06)",
+    },
+    processIntroWrap: {
+      maxWidth: "900px",
+      margin: "0 auto",
+      textAlign: "center",
+      padding: "0 24px",
+    },
+    processIntroTitle: {
+      fontSize: "clamp(2.2rem, 4vw, 4rem)",
+      lineHeight: 1.1,
+      fontWeight: 900,
+      margin: "0 0 18px",
+      color: "#ffffff",
+    },
+    processIntroText: {
+      fontSize: "18px",
+      lineHeight: 1.8,
+      color: "rgba(255,255,255,0.68)",
+      margin: 0,
+    },
+    processGrid: {
+      maxWidth: "1350px",
+      margin: "56px auto 0",
+      padding: "0 24px",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "26px",
+      alignItems: "start",
+    },
+    processCardDark: {
+      position: "relative",
+      minHeight: "320px",
+      background: "rgba(255,255,255,0.04)",
+      border: "1px solid rgba(255,255,255,0.08)",
+      borderRadius: "24px",
+      padding: "26px",
+      overflow: "hidden",
+    },
+    processBigNumber: {
+      position: "absolute",
+      top: "8px",
+      right: "12px",
+      fontSize: "110px",
+      lineHeight: 1,
+      fontWeight: 800,
+      color: "rgba(255,255,255,0.05)",
+      pointerEvents: "none",
+    },
+    processIcon: {
+      fontSize: "34px",
+      marginBottom: "18px",
+      display: "block",
+    },
+    processCardTitle: {
+      fontSize: "22px",
+      lineHeight: 1.15,
+      fontWeight: 800,
+      margin: "0 0 16px",
+      color: "#ffffff",
+      maxWidth: "230px",
+      position: "relative",
+      zIndex: 1,
+    },
+    processCardText: {
+      fontSize: "16px",
+      lineHeight: 1.85,
+      color: "rgba(255,255,255,0.68)",
+      margin: 0,
+      maxWidth: "290px",
+      position: "relative",
+      zIndex: 1,
+    },
+    processButtonWrap: {
+      textAlign: "center",
+      marginTop: "42px",
+    },
+    darkButton: {
+      background: "#f4c542",
+      color: "#111",
+      textDecoration: "none",
+      padding: "16px 28px",
+      borderRadius: "16px",
+      fontWeight: 700,
+      display: "inline-block",
+    },
+  };
+
+  const navHoverIn = (e) => {
+    e.target.style.color = "#f4c542";
+  };
+
+  const navHoverOut = (e) => {
+    e.target.style.color = "rgba(255,255,255,0.9)";
   };
 
   return (
@@ -316,13 +442,23 @@ export default function App() {
           <img src={logoSrc} alt="Bourdierd Demolition logo" style={styles.logo} />
 
           <nav style={styles.nav}>
-            <a href="#services" style={styles.navLink}>Services</a>
-            <a href="#process" style={styles.navLink}>Process</a>
-            <a href="#quote" style={styles.navLink}>Quote</a>
-            <a href="#contact" style={styles.navLink}>Contact</a>
+            <a href="#services" style={styles.navLink} onMouseOver={navHoverIn} onMouseOut={navHoverOut}>
+              Services
+            </a>
+            <a href="#process" style={styles.navLink} onMouseOver={navHoverIn} onMouseOut={navHoverOut}>
+              Process
+            </a>
+            <a href="#quote" style={styles.navLink} onMouseOver={navHoverIn} onMouseOut={navHoverOut}>
+              Quote
+            </a>
+            <a href="#contact" style={styles.navLink} onMouseOver={navHoverIn} onMouseOut={navHoverOut}>
+              Contact
+            </a>
           </nav>
 
-          <a href="tel:4373525001" style={styles.callBtn}>Call 437-352-5001</a>
+          <a href="tel:4373525001" style={styles.callBtn}>
+            Call 437-352-5001
+          </a>
         </div>
       </header>
 
@@ -330,7 +466,6 @@ export default function App() {
         <div style={styles.heroGrid}>
           <div>
             <div style={styles.badge}>Residential Interior Demolition & Junk Removal</div>
-            <img src={logoSrc} alt="Bourdierd Demolition logo" style={styles.heroLogo} />
 
             <h1 style={styles.h1}>Clean demolition. Fast quotes. Easy communication.</h1>
 
@@ -339,8 +474,12 @@ export default function App() {
             </p>
 
             <div style={styles.buttonRow}>
-              <a href="#quote" style={styles.primaryBtn}>Get a Free Quote</a>
-              <a href="tel:4373525001" style={styles.secondaryBtn}>Call Now</a>
+              <a href="#quote" style={styles.primaryBtn}>
+                Get a Free Quote
+              </a>
+              <a href="tel:4373525001" style={styles.secondaryBtn}>
+                Call Now
+              </a>
             </div>
 
             <div style={styles.statGrid}>
@@ -363,8 +502,16 @@ export default function App() {
             <div style={styles.card}>
               <div style={{ ...styles.sectionTitle, marginBottom: "16px" }}>Popular Jobs</div>
               <div style={{ display: "grid", gap: "12px" }}>
-                {services.slice(0, 3).map((service) => (
-                  <div key={service} style={{ background: "rgba(0,0,0,0.3)", padding: "14px", borderRadius: "16px", color: "rgba(255,255,255,0.88)" }}>
+                {services.slice(0, 5).map((service) => (
+                  <div
+                    key={service}
+                    style={{
+                      background: "rgba(0,0,0,0.3)",
+                      padding: "14px",
+                      borderRadius: "16px",
+                      color: "rgba(255,255,255,0.88)",
+                    }}
+                  >
                     {service}
                   </div>
                 ))}
@@ -372,7 +519,14 @@ export default function App() {
             </div>
 
             <div style={styles.yellowCard}>
-              <div style={{ fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.25em", opacity: 0.7 }}>
+              <div
+                style={{
+                  fontSize: "14px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.25em",
+                  opacity: 0.7,
+                }}
+              >
                 Need a quote?
               </div>
               <div style={{ fontSize: "34px", fontWeight: 900, lineHeight: 1.1, marginTop: "12px" }}>
@@ -381,7 +535,10 @@ export default function App() {
               <div style={{ marginTop: "14px", lineHeight: 1.7, opacity: 0.85 }}>
                 Residential interior demolition and junk removal with fast response times and professional service.
               </div>
-              <a href="tel:4373525001" style={{ ...styles.primaryBtn, background: "#111", color: "white", marginTop: "20px" }}>
+              <a
+                href="tel:4373525001"
+                style={{ ...styles.primaryBtn, background: "#111", color: "white", marginTop: "20px" }}
+              >
                 437-352-5001
               </a>
             </div>
@@ -395,21 +552,57 @@ export default function App() {
                     We focus on interior work with care, cleanliness, and attention to detail.
                   </div>
                 </div>
+
                 <div style={{ background: "rgba(0,0,0,0.3)", borderRadius: "18px", padding: "18px" }}>
                   <div style={{ fontWeight: 700, marginBottom: "8px" }}>Straightforward service</div>
                   <div style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.6 }}>
                     Clear communication from first message to final clean-up.
                   </div>
                 </div>
+
                 <div style={{ background: "rgba(0,0,0,0.3)", borderRadius: "18px", padding: "18px" }}>
                   <div style={{ fontWeight: 700, marginBottom: "8px" }}>Ready for renovation</div>
                   <div style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.6 }}>
                     We help leave your space prepped for the next phase of the project.
                   </div>
                 </div>
+
+                <div style={{ background: "rgba(0,0,0,0.3)", borderRadius: "18px", padding: "18px" }}>
+                  <div style={{ fontWeight: 700, marginBottom: "8px" }}>Fast turnaround</div>
+                  <div style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.6 }}>
+                    We respond quickly, show up on time, and work efficiently to keep your renovation moving.
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section style={styles.processSectionDark}>
+        <div style={styles.processIntroWrap}>
+          <h2 style={styles.processIntroTitle}>Our Interior Demolition Process</h2>
+          <p style={styles.processIntroText}>
+            We follow a clear four-step process that keeps your project moving from start to finish.
+            It is designed to prioritize safety, efficiency, cleanliness, and a smooth renovation experience.
+          </p>
+        </div>
+
+        <div style={styles.processGrid}>
+          {demolitionProcess.map((item) => (
+            <div key={item.number} style={styles.processCardDark}>
+              <div style={styles.processBigNumber}>{item.number}</div>
+              <span style={styles.processIcon}>{item.icon}</span>
+              <h3 style={styles.processCardTitle}>{item.title}</h3>
+              <p style={styles.processCardText}>{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div style={styles.processButtonWrap}>
+          <a href="#quote" style={styles.darkButton}>
+            Start Your Demolition Project
+          </a>
         </div>
       </section>
 
@@ -443,18 +636,20 @@ export default function App() {
           <div style={styles.grid3}>
             {steps.map((step, index) => (
               <div key={step.title} style={{ ...styles.serviceCard, background: "#171717" }}>
-                <div style={{
-                  height: "48px",
-                  width: "48px",
-                  borderRadius: "16px",
-                  background: "#f4c542",
-                  color: "#111",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontWeight: 800,
-                  marginBottom: "16px"
-                }}>
+                <div
+                  style={{
+                    height: "48px",
+                    width: "48px",
+                    borderRadius: "16px",
+                    background: "#f4c542",
+                    color: "#111",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontWeight: 800,
+                    marginBottom: "16px",
+                  }}
+                >
                   {index + 1}
                 </div>
                 <div style={{ fontSize: "22px", fontWeight: 700, marginBottom: "10px" }}>{step.title}</div>
@@ -489,17 +684,38 @@ export default function App() {
                 <div style={{ display: "grid", gap: "12px" }}>
                   <a
                     href="tel:4373525001"
-                    style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}
+                    style={{
+                      ...styles.navLink,
+                      background: "rgba(0,0,0,0.3)",
+                      padding: "16px",
+                      borderRadius: "16px",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     Call us: 437-352-5001
                   </a>
                   <a
                     href="sms:4373525001"
-                    style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}
+                    style={{
+                      ...styles.navLink,
+                      background: "rgba(0,0,0,0.3)",
+                      padding: "16px",
+                      borderRadius: "16px",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
                   >
                     Text us for a fast response
                   </a>
-                  <div style={{ background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "rgba(255,255,255,0.8)" }}>
+                  <div
+                    style={{
+                      background: "rgba(0,0,0,0.3)",
+                      padding: "16px",
+                      borderRadius: "16px",
+                      color: "rgba(255,255,255,0.8)",
+                    }}
+                  >
                     Service Area: Toronto & GTA
                   </div>
                 </div>
@@ -513,10 +729,14 @@ export default function App() {
               <input style={styles.input} placeholder="Email address" />
               <input style={styles.input} placeholder="Project address" />
               <select style={styles.input} defaultValue="">
-                <option value="" disabled>Type of project</option>
+                <option value="" disabled>
+                  Type of project
+                </option>
                 <option>Kitchen demolition</option>
                 <option>Bathroom demolition</option>
                 <option>Basement demolition</option>
+                <option>Deck removal</option>
+                <option>Floor demolition</option>
                 <option>Flooring removal</option>
                 <option>Drywall / wall removal</option>
                 <option>Junk removal</option>
@@ -574,7 +794,14 @@ export default function App() {
             </div>
           </div>
 
-          <div style={{ ...styles.center, marginTop: "26px", color: "rgba(255,255,255,0.4)", fontSize: "14px" }}>
+          <div
+            style={{
+              ...styles.center,
+              marginTop: "26px",
+              color: "rgba(255,255,255,0.4)",
+              fontSize: "14px",
+            }}
+          >
             © 2026 Bourdierd Demolition. All rights reserved.
           </div>
         </div>
