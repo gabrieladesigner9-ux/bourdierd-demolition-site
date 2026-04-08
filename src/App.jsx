@@ -52,27 +52,23 @@ export default function App() {
   const demolitionProcess = [
     {
       number: "01",
-      icon: "💬",
       title: "Consultation & Site Assessment",
-      text: "Every project starts with a clear review of the space. We assess the layout, materials, and scope of work so you know exactly what to expect before demolition begins.",
+      text: "We start by reviewing the space, the materials involved, and the scope of work so you know exactly what to expect before demolition begins.",
     },
     {
       number: "02",
-      icon: "🛡️",
       title: "Protection & Preparation",
-      text: "Before we begin, we protect surrounding areas and prepare the workspace for a clean, controlled demolition. Our goal is to minimize dust, disruption, and unnecessary mess.",
+      text: "Before we begin, we protect surrounding areas and prepare the workspace for a cleaner, more controlled demolition process.",
     },
     {
       number: "03",
-      icon: "🧱",
       title: "Interior Demolition",
-      text: "We complete the demolition carefully and efficiently, removing the materials that need to go while keeping the work area organized and safe throughout the project.",
+      text: "We complete the demolition carefully and efficiently, keeping the work area organized while removing the materials that need to go.",
     },
     {
       number: "04",
-      icon: "🧹",
       title: "Debris Removal & Final Clean-Up",
-      text: "Once demolition is complete, we remove debris and leave the space clean and ready for the next phase of your renovation.",
+      text: "Once demolition is complete, we remove debris and leave the space clean and ready for the next stage of your renovation.",
     },
   ];
 
@@ -106,7 +102,7 @@ export default function App() {
       flexWrap: "wrap",
     },
     logo: {
-      height: "180px",
+      height: "84px",
       width: "auto",
       objectFit: "contain",
     },
@@ -360,57 +356,49 @@ export default function App() {
       color: "rgba(255,255,255,0.68)",
       margin: 0,
     },
-    processGrid: {
-      maxWidth: "1350px",
-      margin: "56px auto 0",
+    processGridClean: {
+      maxWidth: "1250px",
+      margin: "54px auto 0",
       padding: "0 24px",
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-      gap: "26px",
-      alignItems: "start",
+      gap: "22px",
+      alignItems: "stretch",
     },
-    processCardDark: {
-      position: "relative",
-      minHeight: "320px",
-      background: "rgba(255,255,255,0.04)",
-      border: "1px solid rgba(255,255,255,0.08)",
-      borderRadius: "24px",
+    processCardClean: {
+      background: "rgba(255,255,255,0.03)",
+      border: "1px solid rgba(255,255,255,0.07)",
+      borderRadius: "20px",
       padding: "26px",
-      overflow: "hidden",
+      minHeight: "250px",
     },
-    processBigNumber: {
-      position: "absolute",
-      top: "8px",
-      right: "12px",
-      fontSize: "110px",
-      lineHeight: 1,
-      fontWeight: 800,
-      color: "rgba(255,255,255,0.05)",
-      pointerEvents: "none",
-    },
-    processIcon: {
-      fontSize: "34px",
+    processTopLine: {
+      width: "48px",
+      height: "4px",
+      borderRadius: "999px",
+      background: "#f4c542",
       marginBottom: "18px",
-      display: "block",
     },
-    processCardTitle: {
-      fontSize: "22px",
+    processStepLabel: {
+      fontSize: "12px",
+      textTransform: "uppercase",
+      letterSpacing: "0.2em",
+      color: "rgba(244,197,66,0.82)",
+      marginBottom: "14px",
+      fontWeight: 700,
+    },
+    processCardTitleClean: {
+      fontSize: "28px",
       lineHeight: 1.15,
       fontWeight: 800,
-      margin: "0 0 16px",
+      margin: "0 0 14px",
       color: "#ffffff",
-      maxWidth: "230px",
-      position: "relative",
-      zIndex: 1,
     },
-    processCardText: {
+    processCardTextClean: {
       fontSize: "16px",
       lineHeight: 1.85,
       color: "rgba(255,255,255,0.68)",
       margin: 0,
-      maxWidth: "290px",
-      position: "relative",
-      zIndex: 1,
     },
     processButtonWrap: {
       textAlign: "center",
@@ -465,7 +453,7 @@ export default function App() {
       <section style={styles.hero}>
         <div style={styles.heroGrid}>
           <div>
-            <div style={styles.badge}>Residential Interior Demolition & Junk Removal</div>
+         
 
             <h1 style={styles.h1}>Clean demolition. Fast quotes. Easy communication.</h1>
 
@@ -581,20 +569,20 @@ export default function App() {
 
       <section style={styles.processSectionDark}>
         <div style={styles.processIntroWrap}>
+          <div style={styles.sectionTitle}>Our Process</div>
           <h2 style={styles.processIntroTitle}>Our Interior Demolition Process</h2>
           <p style={styles.processIntroText}>
-            We follow a clear four-step process that keeps your project moving from start to finish.
-            It is designed to prioritize safety, efficiency, cleanliness, and a smooth renovation experience.
+            We follow a simple, professional process that keeps your project moving from start to finish with clear communication, clean work, and reliable service.
           </p>
         </div>
 
-        <div style={styles.processGrid}>
+        <div style={styles.processGridClean}>
           {demolitionProcess.map((item) => (
-            <div key={item.number} style={styles.processCardDark}>
-              <div style={styles.processBigNumber}>{item.number}</div>
-              <span style={styles.processIcon}>{item.icon}</span>
-              <h3 style={styles.processCardTitle}>{item.title}</h3>
-              <p style={styles.processCardText}>{item.text}</p>
+            <div key={item.number} style={styles.processCardClean}>
+              <div style={styles.processTopLine} />
+              <div style={styles.processStepLabel}>Step {item.number}</div>
+              <h3 style={styles.processCardTitleClean}>{item.title}</h3>
+              <p style={styles.processCardTextClean}>{item.text}</p>
             </div>
           ))}
         </div>
