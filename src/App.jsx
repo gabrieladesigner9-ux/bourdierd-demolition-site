@@ -618,7 +618,7 @@ export default function App() {
 
       <section id="process" style={styles.sectionMuted}>
         <div style={styles.container}>
-          <div style={styles.sectionTitle}>Process</div>
+          <div style={styles.sectionTitle}>Get in Contact</div>
           <h2 style={styles.sectionHeading}>Easy from first contact to final clean-up</h2>
 
           <div style={styles.grid3}>
