@@ -13,22 +13,22 @@ export default function App() {
   const steps = [
     {
       title: "Tell us about your project",
-      text: "Send us a quick message with your address, the type of demolition you need, and photos if available.",
+      text: "Send us a quick message with your address, project details, and photos if available so we can better understand the scope of work.",
     },
     {
       title: "Get your quote",
-      text: "We review the details and get back to you with a clear quote and next steps.",
+      text: "We review the information and provide a clear quote with next steps, pricing, and availability.",
     },
     {
       title: "We get it done",
-      text: "We show up ready to work, protect the space, complete the demolition, and remove debris.",
+      text: "We arrive ready to work, protect the space, complete the demolition efficiently, and remove debris when requested.",
     },
   ];
 
   const faqs = [
     {
       q: "What type of work do you do?",
-      a: "We focus on residential interior demolition and junk removal for kitchens, bathrooms, basements, flooring, drywall, and renovation prep.",
+      a: "We specialize in residential interior demolition and junk removal for kitchens, bathrooms, basements, flooring, drywall, and renovation prep.",
     },
     {
       q: "Do you offer free quotes?",
@@ -38,6 +38,13 @@ export default function App() {
       q: "Do you remove debris?",
       a: "Yes. We can remove junk and demolition debris so your space is clean and ready for the next phase.",
     },
+  ];
+
+  const highlights = [
+    "Free estimates",
+    "Fast response time",
+    "Clean and professional work",
+    "Residential specialists",
   ];
 
   const styles = {
@@ -69,11 +76,11 @@ export default function App() {
       gap: "16px",
       flexWrap: "wrap",
     },
-  logo: {
-  height: "180px",
-  width: "auto",
-  objectFit: "contain",
-},
+    logo: {
+      height: "84px",
+      width: "auto",
+      objectFit: "contain",
+    },
     nav: {
       display: "flex",
       gap: "20px",
@@ -119,7 +126,7 @@ export default function App() {
       marginBottom: "18px",
     },
     heroLogo: {
-      height: "140px",
+      height: "150px",
       width: "auto",
       objectFit: "contain",
       marginBottom: "20px",
@@ -293,6 +300,13 @@ export default function App() {
       marginTop: "12px",
       lineHeight: 1.6,
     },
+    checklist: {
+      display: "grid",
+      gap: "10px",
+      marginTop: "18px",
+      color: "rgba(255,255,255,0.85)",
+      fontSize: "15px",
+    },
   };
 
   return (
@@ -321,11 +335,11 @@ export default function App() {
             <h1 style={styles.h1}>Clean demolition. Fast quotes. Easy communication.</h1>
 
             <p style={styles.heroText}>
-              Bourdierd Demolition helps homeowners prepare their spaces for renovation with reliable interior demolition and debris removal. Simple process, clear communication, and service you can count on.
+              Bourdierd Demolition helps homeowners prepare their spaces for renovation with reliable interior demolition and junk removal. We focus on clean work, clear communication, and dependable service from start to finish.
             </p>
 
             <div style={styles.buttonRow}>
-              <a href="#quote" style={styles.primaryBtn}>Request a Quote</a>
+              <a href="#quote" style={styles.primaryBtn}>Get a Free Quote</a>
               <a href="tel:4373525001" style={styles.secondaryBtn}>Call Now</a>
             </div>
 
@@ -365,7 +379,7 @@ export default function App() {
                 Text or call us today
               </div>
               <div style={{ marginTop: "14px", lineHeight: 1.7, opacity: 0.85 }}>
-                The easier you make it for clients to contact you, the more leads you capture.
+                Residential interior demolition and junk removal with fast response times and professional service.
               </div>
               <a href="tel:4373525001" style={{ ...styles.primaryBtn, background: "#111", color: "white", marginTop: "20px" }}>
                 437-352-5001
@@ -455,23 +469,38 @@ export default function App() {
         <div style={styles.container}>
           <div style={styles.formWrap}>
             <div>
-              <div style={styles.sectionTitle}>Request a Quote</div>
-              <h2 style={styles.sectionHeading}>Make it easy for people to reach you</h2>
+              <div style={styles.sectionTitle}>Get a Free Quote</div>
+              <h2 style={styles.sectionHeading}>Ready to start your demolition project?</h2>
               <p style={styles.sectionText}>
-                This section is designed to help customers quickly ask for a quote. Once your site is published, this form can be connected to your email or quote tool.
+                Contact Bourdierd Demolition today for a fast, reliable quote. We specialize in residential interior demolition and junk removal across Toronto and the GTA.
               </p>
+              <p style={{ ...styles.sectionText, marginTop: "14px" }}>
+                Send us your project details and we’ll get back to you quickly with pricing and availability.
+              </p>
+
+              <div style={styles.checklist}>
+                {highlights.map((item) => (
+                  <div key={item}>✔ {item}</div>
+                ))}
+              </div>
 
               <div style={{ ...styles.card, marginTop: "28px" }}>
                 <div style={{ fontSize: "22px", fontWeight: 700, marginBottom: "18px" }}>Direct contact</div>
                 <div style={{ display: "grid", gap: "12px" }}>
-                  <a href="tel:4373525001" style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}>
-                    Call: 437-352-5001
+                  <a
+                    href="tel:4373525001"
+                    style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}
+                  >
+                    Call us: 437-352-5001
                   </a>
-                  <a href="sms:4373525001" style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}>
+                  <a
+                    href="sms:4373525001"
+                    style={{ ...styles.navLink, background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "white", textDecoration: "none" }}
+                  >
                     Text us for a fast response
                   </a>
                   <div style={{ background: "rgba(0,0,0,0.3)", padding: "16px", borderRadius: "16px", color: "rgba(255,255,255,0.8)" }}>
-                    Add your email and service area here when ready.
+                    Service Area: Toronto & GTA
                   </div>
                 </div>
               </div>
@@ -501,7 +530,7 @@ export default function App() {
                 Send Quote Request
               </button>
               <div style={styles.smallMuted}>
-                Demo version: the button is ready for a real form integration.
+                Once connected, this form can send quote requests directly to your email.
               </div>
             </div>
           </div>
@@ -531,7 +560,7 @@ export default function App() {
               <div style={styles.sectionTitle}>Contact</div>
               <h2 style={styles.sectionHeading}>Ready to start your project?</h2>
               <p style={styles.sectionText}>
-                Contact Bourdierd Demolition today for residential interior demolition and junk removal services.
+                Contact Bourdierd Demolition today for residential interior demolition and junk removal services in Toronto and the GTA.
               </p>
             </div>
 
@@ -540,7 +569,7 @@ export default function App() {
                 Call 437-352-5001
               </a>
               <a href="#quote" style={{ ...styles.secondaryBtn, textAlign: "center" }}>
-                Request a Quote
+                Get a Free Quote
               </a>
             </div>
           </div>
