@@ -712,37 +712,82 @@ export default function App() {
               </div>
             </div>
 
-            <div style={styles.formCard}>
-              <div style={{ fontSize: "30px", fontWeight: 800, marginBottom: "18px" }}>Quote Request Form</div>
-              <input style={styles.input} placeholder="Full name" />
-              <input style={styles.input} placeholder="Phone number" />
-              <input style={styles.input} placeholder="Email address" />
-              <input style={styles.input} placeholder="Project address" />
-              <select style={styles.input} defaultValue="">
-                <option value="" disabled>
-                  Type of project
-                </option>
-                <option>Kitchen demolition</option>
-                <option>Bathroom demolition</option>
-                <option>Basement demolition</option>
-                <option>Deck removal</option>
-                <option>Floor demolition</option>
-                <option>Drywall / wall removal</option>
-                <option>Junk removal</option>
-                <option>Other</option>
-              </select>
-              <textarea
-                rows="5"
-                style={{ ...styles.input, resize: "vertical" }}
-                placeholder="Tell us about your project, timeline, and anything important we should know."
-              />
-              <button style={{ ...styles.primaryBtn, border: "none", cursor: "pointer", width: "100%" }}>
-                Send Quote Request
-              </button>
-              <div style={styles.smallMuted}>
-                Once connected, this form can send quote requests directly to your email.
-              </div>
-            </div>
+<div style={styles.formCard}>
+  <div style={{ fontSize: "30px", fontWeight: 800, marginBottom: "18px" }}>
+    Quote Request Form
+  </div>
+
+  <form action="https://formspree.io/f/mbdpellb" method="POST">
+
+    <input 
+      type="text"
+      name="name"
+      placeholder="Full name"
+      required
+      style={styles.input}
+    />
+
+    <input 
+      type="tel"
+      name="phone"
+      placeholder="Phone number"
+      required
+      style={styles.input}
+    />
+
+    <input 
+      type="email"
+      name="email"
+      placeholder="Email address"
+      style={styles.input}
+    />
+
+    <input 
+      type="text"
+      name="address"
+      placeholder="Project address"
+      style={styles.input}
+    />
+
+    <select 
+      name="project_type"
+      defaultValue=""
+      style={styles.input}
+    >
+      <option value="" disabled>
+        Type of project
+      </option>
+      <option>Kitchen demolition</option>
+      <option>Bathroom demolition</option>
+      <option>Basement demolition</option>
+      <option>Deck removal</option>
+      <option>Floor demolition</option>
+      <option>Drywall / wall removal</option>
+      <option>Junk removal</option>
+      <option>Other</option>
+    </select>
+
+    <textarea
+      name="message"
+      rows="5"
+      placeholder="Tell us about your project, timeline, and anything important we should know."
+      style={{ ...styles.input, resize: "vertical" }}
+      required
+    />
+
+    <button 
+      type="submit"
+      style={{ ...styles.primaryBtn, border: "none", cursor: "pointer", width: "100%" }}
+    >
+      Get a Free Quote
+    </button>
+
+  </form>
+
+  <div style={styles.smallMuted}>
+    We usually respond within a few hours.
+  </div>
+</div>
           </div>
         </div>
       </section>
