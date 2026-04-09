@@ -102,7 +102,7 @@ export default function App() {
       flexWrap: "wrap",
     },
     logo: {
-      height: "84px",
+      height: "180px",
       width: "auto",
       objectFit: "contain",
     },
