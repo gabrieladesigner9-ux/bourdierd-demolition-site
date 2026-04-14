@@ -471,19 +471,19 @@ width: "100%",
 <section style={styles.imageShowcase}>
   <div style={styles.imageGrid}>
    <img
-  src="/demo1.jpg"
+  src="/demo1.jpeg"
   style={styles.showcaseImg}
   onMouseOver={e => e.target.style.transform="scale(1.05)"}
   onMouseOut={e => e.target.style.transform="scale(1)"}
 />
    <img
-  src="/demo2.jpg"
+  src="/demo2.jpeg"
   style={styles.showcaseImg}
   onMouseOver={e => e.target.style.transform="scale(1.05)"}
   onMouseOut={e => e.target.style.transform="scale(1)"}
 />
    <img
-  src="/demo3.jpg"
+  src="/demo3.jpeg"
   style={styles.showcaseImg}
   onMouseOver={e => e.target.style.transform="scale(1.05)"}
   onMouseOut={e => e.target.style.transform="scale(1)"}
