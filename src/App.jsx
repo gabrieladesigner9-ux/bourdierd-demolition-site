@@ -1,6 +1,29 @@
+import { useState, useEffect } from "react";
 export default function App() {
   const logoSrc = "/logo.png";
+const carouselImages = [
+  "/demo1.jpeg",
+  "/demo2.jpeg",
+  "/demo3.jpeg",
+];
 
+const [currentSlide, setCurrentSlide] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  }, 4500);
+
+  return () => clearInterval(interval);
+}, [carouselImages.length]);
+
+const goToPrev = () => {
+  setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+};
+
+const goToNext = () => {
+  setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+};
   const services = [
     "Kitchen demolition",
     "Bathroom demolition",
@@ -160,24 +183,93 @@ export default function App() {
       fontWeight: 900,
       maxWidth: "680px",
     },
-    imageShowcase: {
+    carouselSection: {
   width: "100%",
-  padding: "40px 60px 0 60px",
+  padding: "34px 32px 10px",
+  borderBottom: "1px solid rgba(255,255,255,0.06)",
 },
 
-imageGrid: {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gap: "20px",
+carouselWrap: {
+  position: "relative",
+  maxWidth: "1700px",
+  margin: "0 auto",
+  height: "430px",
+  borderRadius: "24px",
+  overflow: "hidden",
+  border: "1px solid rgba(255,255,255,0.08)",
+  background: "#111",
+  boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
 },
 
-showcaseImg: {
-width: "100%",
-  height: "260px",
-  objectFit: "cover",
-  borderRadius: "14px",
-  transition: "0.4s ease",
+carouselTrack: {
+  position: "relative",
+  width: "100%",
+  height: "100%",
+},
+
+carouselSlide: {
+  position: "absolute",
+  inset: 0,
+  transition: "opacity 0.6s ease",
+},
+
+carouselImage: {
+  width: "100%",
+  height: "100%",
+  objectFit: "contain",
+  display: "block",
+  background: "#0b0b0b",
+},
+
+carouselArrow: {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  zIndex: 3,
+  width: "52px",
+  height: "52px",
+  borderRadius: "999px",
+  border: "1px solid rgba(255,255,255,0.18)",
+  background: "rgba(0,0,0,0.45)",
+  color: "#fff",
+  fontSize: "28px",
   cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backdropFilter: "blur(6px)",
+},
+
+carouselArrowLeft: {
+  left: "18px",
+},
+
+carouselArrowRight: {
+  right: "18px",
+},
+
+carouselDots: {
+  position: "absolute",
+  left: "50%",
+  bottom: "18px",
+  transform: "translateX(-50%)",
+  display: "flex",
+  gap: "10px",
+  zIndex: 3,
+},
+
+carouselDot: {
+  width: "10px",
+  height: "10px",
+  borderRadius: "999px",
+  border: "none",
+  cursor: "pointer",
+  background: "rgba(255,255,255,0.35)",
+},
+
+carouselDotActive: {
+  background: "#f4c542",
+  transform: "scale(1.15)",
 },
     heroText: {
       fontSize: "18px",
@@ -468,26 +560,56 @@ width: "100%",
           </a>
         </div>
       </header>
-<section style={styles.imageShowcase}>
-  <div style={styles.imageGrid}>
-   <img
-  src="/demo1.jpeg"
-  style={styles.showcaseImg}
-  onMouseOver={e => e.target.style.transform="scale(1.05)"}
-  onMouseOut={e => e.target.style.transform="scale(1)"}
-/>
-   <img
-  src="/demo2.jpeg"
-  style={styles.showcaseImg}
-  onMouseOver={e => e.target.style.transform="scale(1.05)"}
-  onMouseOut={e => e.target.style.transform="scale(1)"}
-/>
-   <img
-  src="/demo3.jpeg"
-  style={styles.showcaseImg}
-  onMouseOver={e => e.target.style.transform="scale(1.05)"}
-  onMouseOut={e => e.target.style.transform="scale(1)"}
-/>
+<section style={styles.carouselSection}>
+  <div style={styles.carouselWrap}>
+    <div style={styles.carouselTrack}>
+      {carouselImages.map((image, index) => (
+        <div
+          key={image}
+          style={{
+            ...styles.carouselSlide,
+            opacity: currentSlide === index ? 1 : 0,
+            pointerEvents: currentSlide === index ? "auto" : "none",
+          }}
+        >
+          <img
+            src={image}
+            alt={`Bourdierd Demolition work ${index + 1}`}
+            style={styles.carouselImage}
+          />
+        </div>
+      ))}
+    </div>
+
+    <button
+      type="button"
+      onClick={goToPrev}
+      style={{ ...styles.carouselArrow, ...styles.carouselArrowLeft }}
+    >
+      ‹
+    </button>
+
+    <button
+      type="button"
+      onClick={goToNext}
+      style={{ ...styles.carouselArrow, ...styles.carouselArrowRight }}
+    >
+      ›
+    </button>
+
+    <div style={styles.carouselDots}>
+      {carouselImages.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          onClick={() => setCurrentSlide(index)}
+          style={{
+            ...styles.carouselDot,
+            ...(currentSlide === index ? styles.carouselDotActive : {}),
+          }}
+        />
+      ))}
+    </div>
   </div>
 </section>
       <section style={styles.hero}>
