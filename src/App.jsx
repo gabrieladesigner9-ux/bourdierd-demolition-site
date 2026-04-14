@@ -183,18 +183,18 @@ const goToNext = () => {
       fontWeight: 900,
       maxWidth: "680px",
     },
-    carouselSection: {
+   carouselSection: {
   width: "100%",
-  padding: "34px 32px 10px",
+  padding: "24px 0 10px",
   borderBottom: "1px solid rgba(255,255,255,0.06)",
 },
 
 carouselWrap: {
   position: "relative",
-  width: "100%",        // 🔥 esto hace que sea full pantalla
-  height: "550px",      // 🔥 más alto (se ve mejor)
+  width: "100%",
+  height: "780px",
   overflow: "hidden",
-  background: "#111",
+  background: "#000",
 },
 
 carouselTrack: {
@@ -212,7 +212,7 @@ carouselSlide: {
 carouselImage: {
   width: "100%",
   height: "100%",
-  objectFit: "cover",
+  objectFit: "contain",
   display: "block",
 },
 
