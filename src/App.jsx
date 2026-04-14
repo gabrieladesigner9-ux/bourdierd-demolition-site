@@ -191,14 +191,10 @@ const goToNext = () => {
 
 carouselWrap: {
   position: "relative",
-  maxWidth: "1700px",
-  margin: "0 auto",
-  height: "430px",
-  borderRadius: "24px",
+  width: "100%",        // 🔥 esto hace que sea full pantalla
+  height: "550px",      // 🔥 más alto (se ve mejor)
   overflow: "hidden",
-  border: "1px solid rgba(255,255,255,0.08)",
   background: "#111",
-  boxShadow: "0 20px 50px rgba(0,0,0,0.35)",
 },
 
 carouselTrack: {
@@ -216,9 +212,8 @@ carouselSlide: {
 carouselImage: {
   width: "100%",
   height: "100%",
-  objectFit: "contain",
+  objectFit: "cover",
   display: "block",
-  background: "#0b0b0b",
 },
 
 carouselArrow: {
