@@ -160,6 +160,25 @@ export default function App() {
       fontWeight: 900,
       maxWidth: "680px",
     },
+    imageShowcase: {
+  width: "100%",
+  padding: "40px 60px 0 60px",
+},
+
+imageGrid: {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "20px",
+},
+
+showcaseImg: {
+width: "100%",
+  height: "260px",
+  objectFit: "cover",
+  borderRadius: "14px",
+  transition: "0.4s ease",
+  cursor: "pointer",
+},
     heroText: {
       fontSize: "18px",
       lineHeight: 1.8,
@@ -449,7 +468,28 @@ export default function App() {
           </a>
         </div>
       </header>
-
+<section style={styles.imageShowcase}>
+  <div style={styles.imageGrid}>
+   <img
+  src="/demo1.jpg"
+  style={styles.showcaseImg}
+  onMouseOver={e => e.target.style.transform="scale(1.05)"}
+  onMouseOut={e => e.target.style.transform="scale(1)"}
+/>
+   <img
+  src="/demo2.jpg"
+  style={styles.showcaseImg}
+  onMouseOver={e => e.target.style.transform="scale(1.05)"}
+  onMouseOut={e => e.target.style.transform="scale(1)"}
+/>
+   <img
+  src="/demo3.jpg"
+  style={styles.showcaseImg}
+  onMouseOver={e => e.target.style.transform="scale(1.05)"}
+  onMouseOut={e => e.target.style.transform="scale(1)"}
+/>
+  </div>
+</section>
       <section style={styles.hero}>
         <div style={styles.heroGrid}>
           <div>
